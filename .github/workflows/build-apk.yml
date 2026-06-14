@@ -25,8 +25,9 @@ jobs:
 
     - name: Initialize Capacitor Configuration
       run: |
-        npx cap init healthcoder com.healthcoder.app --web-dir=.
-        npx cap add android
+        mkdir -p www
+          echo '<html lang="en"><body><h1>Healthcoder Build</h1></body></html>' > www/index.html
+          npx cap init healthcoder com.healthcoder.app --web-dir=www
 
     - name: Copy App Assets
       run: |
